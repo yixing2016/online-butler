@@ -1,10 +1,10 @@
-package com.sqin.common;
+package com.sqin.bootstrap;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CommonApplicationTests {
+class OnlineButlerApplicationTests {
 
     @Test
     void contextLoads() {
