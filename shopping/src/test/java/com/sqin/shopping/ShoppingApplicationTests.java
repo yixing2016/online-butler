@@ -1,10 +1,10 @@
-package com.sqin.common;
+package com.sqin.shopping;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CommonApplicationTests {
+class ShoppingApplicationTests {
 
     @Test
     void contextLoads() {
