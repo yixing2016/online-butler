@@ -1,6 +1,5 @@
 package com.sqin.shopping.service.impl;
 
-
 import com.sqin.shopping.entity.Commodity;
 import com.sqin.shopping.repository.CommodityRepository;
 import com.sqin.shopping.service.api.CommodityService;
@@ -22,7 +21,10 @@ public class CommodityServiceImpl implements CommodityService {
 
     @Override
     public String save(Commodity commodity) {
+        // only commodity name is mandatory to user.
+        commodity.setCreateTime(System.currentTimeMillis());
+        commodity.setStatus("0");
         Commodity result = commodityRepository.save(commodity);
-        return result.getStatus();
+        return result.getId();
     }
 }

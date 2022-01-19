@@ -1,6 +1,6 @@
 package com.sqin.shopping.controller;
 
-import com.sqin.common.util.JsonTranslation;
+import com.sqin.common.dto.ResponseResult;
 import com.sqin.shopping.entity.Commodity;
 import com.sqin.shopping.service.api.CommodityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,16 +22,22 @@ public class ShoppingController {
     CommodityService commodityService;
 
     @GetMapping("/getShoppingList")
-    public String getShoppingList() {
-
+    public ResponseResult getShoppingList() {
         List<Commodity> commodityList = commodityService.findAll();
 
-        return JsonTranslation.object2JsonString(commodityList);
+        return ResponseResult.success(commodityList);
     }
 
     @PostMapping("addCommodity")
-    public String addCommodity(@RequestBody Commodity commodity) {
-        return commodityService.save(commodity);
+    public ResponseResult addCommodity(@RequestBody Commodity commodity) {
+        commodityService.save(commodity);
+        return ResponseResult.success(commodity);
+    }
+
+    @PostMapping("updateCommodity")
+    public ResponseResult updateCommodity(@RequestBody Commodity commodity) {
+        commodityService.save(commodity);
+        return ResponseResult.success(commodity);
     }
 
 }
