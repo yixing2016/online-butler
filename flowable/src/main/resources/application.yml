@@ -1,0 +1,11 @@
+spring:
+  application:
+    namme: flow
+  datasource:
+    url: jdbc:postgresql://localhost:5432/online-butler
+    username: postgres
+    password: 12345678
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 8921
